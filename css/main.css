@@ -1,0 +1,121 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: lightgrey;}
+
+.container {
+	width: 80%;
+	margin: 0 auto;}
+
+.container.mainContent{
+	padding: 15px;
+	background-color: white;}
+#navContainer{
+	background-color: white;}
+
+#menuContainer {
+	width: 100%;
+	background-color: darkgrey;
+	box-shadow: 0 4px 4px 0 rgba(0,0,0,0.75);
+	position: relative;}
+
+#site-logo {
+	text-align: center;}
+#site-logo img{
+	height: 200px;
+	margin: 20px auto;}
+
+.navBar {
+	background-color: darkgrey;
+	list-style-type: none;
+	padding: 0;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;}
+
+.navBar li{
+	display: inline;
+	text-transform: uppercase;}
+
+
+.navBar li a{
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px;
+	color: black;
+	font-weight: 400;
+	font-family: sans-serif;}
+.navBar li a:hover{
+	color: white;
+	font-weight: 800;
+	text-shadow: 3px 3px 3px black;}
+
+.navBar li a.active {
+	color: black;
+	font-weight: 800;
+	background-color: lightgrey;
+	text-shadow: none;}
+
+h1 {
+	text-align: center;
+	margin: 0 0 10px 0;
+	font-family: fantasy;}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;}
+
+.modLists li {
+	text-align: center;
+	padding-bottom: 15px;
+	width: 85%;
+	margin: 0 auto;}
+
+.modLists a {
+	display: block;
+	text-decoration: none;
+	padding: 15px;
+	background-color: darkgrey;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	font-weight: 800;
+	color: black;
+	border-radius: 15px 15px 0 0;}
+
+.modLists span{
+	outline: 2px solid darkgrey;
+	outline-offset: -2px;
+	padding: 4px 0;
+	width: 100%;
+	display: inline-block;}
+
+.modLists a:hover {
+	text-shadow: 3px 3px 3px black;
+	color: white;}
+
+.subHeading {
+	text-align: center;
+	font-family: fantasy;
+	font-size: 1.25em;
+	margin: 0;}
+
+.articleText{
+	line-height: 1.5em;
+	width: 80%;
+	margin: 10px auto;
+	padding: 5px;}
+
+.warningBox{
+	line-height: 1.25em;
+	width: 80%;
+	margin: 10px auto;
+	padding: 5px;
+	background-color: lightgrey;
+	border: 1px solid darkgrey;
+	font-size: 0.75em;
+	color: rgba(0,0,0,0.625);}
+
+.soloArticlePic{
+	display: block;
+	margin: 0 auto 10px auto;}

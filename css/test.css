@@ -1,0 +1,31 @@
+body {
+	margin: 0;
+	padding: 0;}
+
+#site-logo {
+	text-align: center;}
+#site-logo img{
+	height: 200px;}
+
+.navBar {
+	background-color: grey;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;}
+
+.navBar li{
+	display: inline;}
+
+.navBar li a{
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px;
+	color: black;
+	font-weight: 400;}
+.navBar li a:hover{
+	background-color: black;
+	color: white;
+	font-weight: 800;
+	text-transform: uppercase;}
+
