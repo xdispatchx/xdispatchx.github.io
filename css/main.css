@@ -129,7 +129,9 @@ table.articleTable {
 	padding: 15px;}
 
 table.articleTable td{
-	width: 50%;}
+	width: 50%;
+	padding: 10px;}
 
 .articleTable img {
-	float: right;}
+	float: right;
+	width: 100%;}
