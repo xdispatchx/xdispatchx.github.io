@@ -122,3 +122,11 @@ ul {
 	margin: 0 auto 10px auto;
 	max-width: 75%;
 	padding: 15px;}
+
+table.articleTable {
+	margin: 0 auto;
+	width: 90%;
+	padding: 15px;}
+
+table.articleTable td{
+	width: 50%;}
