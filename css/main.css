@@ -130,3 +130,6 @@ table.articleTable {
 
 table.articleTable td{
 	width: 50%;}
+
+.articleTable img {
+	float: right;}
