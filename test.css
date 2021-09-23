@@ -39,3 +39,9 @@ body {
 	background: grey;
 	color: white;
 }
+
+@media (max-width:480px) {
+	body {
+		background-color: black;
+	}
+}
