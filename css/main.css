@@ -23,7 +23,7 @@ body {
 #site-logo {
 	text-align: center;}
 #site-logo img{
-	height: 200px;
+	height: 5em;
 	margin: 20px auto;}
 
 .navBar {
@@ -151,3 +151,14 @@ table.articleTable td{
 
 .articleTable img {
 	max-width: 100%;}
+
+    .navBar li a:hover{
+	color: white;
+	font-weight: 800;
+	text-shadow: 3px 3px 3px black;}
+}
+
+@media (max-width:480px) {
+	body {
+        background-color: green;
+	}

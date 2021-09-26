@@ -20,8 +20,7 @@ body {
 	margin: 0;
 	display: flex;
 	justify-content: space-around;
-	background: red;
-
+	background: blue;
 }
 
 .navMenu li {
@@ -43,6 +42,6 @@ body {
 
 @media screen and (max-width:480px) {
 	body {
-		background-color: black;
+		background-color: red;
 	}
 }

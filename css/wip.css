@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 0.5em;
+}
+
+.site-logo {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.site-logo img {
+   width: 100%;
+}
+
+/*#navMenu .site-logo {
+    width: 50%;
+}*/
+
+
+.menuItems {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    text-transform: uppercase;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: hsl(0, 0%, 70%);
+    flex: wrap;
+}
+
+.menuItems li {
+    flex: 1;
+}
+
+#navMenu ul li a {
+    display: block;
+    width: auto;
+    text-decoration: none;
+    padding: 0.75em;
+    color: hsl(0, 0%, 10%);
+    text-align: center;
+}
+
+#navMenu ul li a:hover {
+    background-color: hsl(0, 0%, 80%);
+    border-radius: 10px;
+}
