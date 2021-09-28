@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>G CODE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <style>
             body {
                 padding: 0;
@@ -19,6 +20,13 @@
                 padding: 1em;
             }
             #gcodeOutput, #boxOutput {
+                flex: 1;
+            }
+            #sizeInput {
+                display: flex;
+                padding: 5px;
+            }
+            #inputButton {
                 flex: 1;
             }
             #gcodeOutput {
@@ -43,15 +51,17 @@
             <h1>G Code Creator - Box Models</h1>
         </header>
         <!--BOX CREATOR PARENT DIV-->
-        <form id="sizeForm">
-        Height: <input type="text" name="xinput" value="">
-        </form>
-        <button onclick="myFunction()">Submit</button>
-        <p id="test"></p>
         <div id="boxCreator">
             <!--LEFT SIDE OF BOX CREATOR IS FOR G CODE OUTPUT-->
             <div id="gcodeOutput">
-                <p>Test</p>
+                <div id="sizeInput">
+                    <form id="sizeForm" action="#">
+                        Height: <input type="text" name="xinput" value="4.86">
+                        Width: <input type="text" name="yinput" value="1.5">                       
+                    </form>
+                    <button id="inputButton" onclick="myFunction()">Submit</button>
+                </div>
+                <p id="test"></p>
             </div>
             <!--RIGHT SIDE OF BOX CREATOR IS BOX MODEL OUTPUT-->
             <div id="boxOutput">
