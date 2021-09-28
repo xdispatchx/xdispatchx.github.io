@@ -15,7 +15,7 @@
             }
             #boxCreator {
                 display: flex;
-                height: 90vh;
+                height: 100%;
                 padding: 1em;
             }
             #gcodeOutput, #boxOutput {
@@ -28,8 +28,9 @@
                 background-color: lightgrey;
             }
             #boxModel {
-                border: 1px solid black;
-                margin: 0 auto;
+                border: 2px solid black;
+                background-color: rgba(0,100,0,0.5);
+                margin: 10% auto;
             }
             #example {
                 font-size: 3vh;
@@ -49,7 +50,6 @@
             </div>
             <!--RIGHT SIDE OF BOX CREATOR IS BOX MODEL OUTPUT-->
             <div id="boxOutput">
-                <p id="example"></p>
                 <div id="boxModel">
                 </div>
             </div>
@@ -58,15 +58,13 @@
         <script>
             let screenHeight = window.innerHeight;
             let screenWidth = window.innerWidth;
-            let x = 40;
+            let x = 48.75;
             let xPierce = x + 0.125;
-            let y = 4;
+            let y = 6.75;
             let yHalf= y / 2;
             let boxHeight = 75;
             let conversionRate = y / x;
             let boxWidth = conversionRate * boxHeight;
-            
-            document.getElementById("example").innerHTML = "Box Width: " + y + " inches";
             
             if (boxWidth > 35) {
                 document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
