@@ -78,7 +78,7 @@
                 let screenWidth = window.innerWidth;
             // let x = 48.75;
                 let xPierce = x + 0.125;
-                let y = 6.75;
+                let y = parseFloat(xInput.elements[1].value);
                 let yHalf= y / 2;
                 let boxHeight = 50;
                 let conversionRate = y / x;
@@ -89,7 +89,7 @@
                 document.getElementById("boxModel").style.width = '35vw';
                 }
                 else {
-                    document.getElementById("boxModel").style.height = "75vh";
+                document.getElementById("boxModel").style.height = "75vh";
                 document.getElementById("boxModel").style.width = boxWidth + "vh";
                 }
             }
