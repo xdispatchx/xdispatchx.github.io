@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>G CODE</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            h1 {
+                width: 100%;
+                text-align: center;
+                font-family: sans-serif;
+                text-transform: uppercase;
+            }
+            #boxCreator {
+                display: flex;
+                height: 90vh;
+                padding: 1em;
+            }
+            #gcodeOutput, #boxOutput {
+                flex: 1;
+            }
+            #gcodeOutput {
+                background-color: grey;
+            }
+            #boxOutput {
+                background-color: lightgrey;
+            }
+            #boxModel {
+                background-color: black;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <header>
+            <h1>G Code Creator - Box Models</h1>
+        </header>
+        <!--BOX CREATOR PARENT DIV-->
+        <div id="boxCreator">
+            <!--LEFT SIDE OF BOX CREATOR IS FOR G CODE OUTPUT-->
+            <div id="gcodeOutput">
+                <p>Test</p>
+                <div style="background-color: black; height: 280.5px; width: 350.625px;">
+                </div>
+            </div>
+            <!--RIGHT SIDE OF BOX CREATOR IS BOX MODEL OUTPUT-->
+            <div id="boxOutput">
+                <p id="example"></p>
+                <div id="boxModel">
+                </div>
+            </div>
+        </div>
+        <p id="screenWidth"></p>
+        <script>
+            let screenHeight = window.innerHeight;
+            let screenWidth = window.innerWidth;
+            let x = 40;
+            let xPierce = x + 0.125;
+            let y = 4;
+            let yHalf= y / 2;
+            let boxHeight = 75;
+            let conversionRate = y / x;
+            let boxWidth = conversionRate * boxHeight;
+            
+            document.getElementById("example").innerHTML = "Box Width: " + y + " inches";
+            
+            if (boxWidth > 35) {
+                document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
+                document.getElementById("boxModel").style.width = '35vw';
+            }
+            else {
+                document.getElementById("boxModel").style.height = "75vh";
+                document.getElementById("boxModel").style.width = boxWidth + "vh";
+            }
+            /*document.getElementById("boxModel").style.height = boxHeight + "vh";
+            document.getElementById("boxModel").style.width = boxWidth + "vh";*/
+        </script>
+    </body>
+</html>
