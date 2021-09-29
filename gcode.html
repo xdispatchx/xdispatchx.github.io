@@ -3,44 +3,46 @@
     <head>
         <title>G CODE</title>
         <style>
-            html {
-                height: 100%;
-            }
             body {
                 padding: 0;
-                margin: 0;
+                margin: 0 1em 0 1em;
                 height: 100%;
             }
             h1 {
+                max-height: 25vw;
                 width: 100%;
                 text-align: center;
                 font-family: sans-serif;
                 text-transform: uppercase;
             }
             #boxCreator {
-                display: flex;
+                display: grid;
+                grid-template-columns: auto auto;
                 height: 100%;
-                padding: 1em;
-            }
-            #gcodeOutput, #boxOutput {
-                flex: 1;
-            }
+                padding: 1em 1em 0 1em;
+                background-color: black;
+                border-radius: 1em 1em 0 0;
+            }           
             #sizeInput {
-                display: flex;
                 padding: 5px;
+                grid-column: 1 / span 2;
+                margin: 0 auto;
+                color: white;
+                font-family: sans-serif;
+                text-transform: uppercase;
+                font-weight: bold;
             }
-            #inputButton {
-                flex: 1;
+            #sizeForm {
+                display: inline;
             }
             #gcodeOutput {
-                background-color: grey;
+                flex-grow: 1;
             }
             #boxOutput {
-                background-color: lightgrey;
+                flex-grow: 2;
             }
             #boxModel {
-                border: 2px solid black;
-                background-color: rgba(0,100,0,0.5);
+                border: 2px solid rgba(100,0,100,0.8);
                 margin: 10% auto;
             }
             #example {
@@ -55,20 +57,19 @@
         </header>
         <!--BOX CREATOR PARENT DIV-->
         <div id="boxCreator">
+            <div id="sizeInput">
+                <form id="sizeForm" action="#">
+                    Height: <input type="text" name="xinput" value="4.86">
+                    Width: <input type="text" name="yinput" value="1.5">                       
+                </form>
+                <button id="inputButton" onclick="myFunction()">Submit</button>
+            </div>
             <!--LEFT SIDE OF BOX CREATOR IS FOR G CODE OUTPUT-->
             <div id="gcodeOutput">
-                <div id="sizeInput">
-                    <form id="sizeForm" action="#">
-                        Height: <input type="text" name="xinput" value="4.86">
-                        Width: <input type="text" name="yinput" value="1.5">                       
-                    </form>
-                    <button id="inputButton" onclick="myFunction()">Submit</button>
-                </div>
-                <p id="test"></p>
             </div>
             <!--RIGHT SIDE OF BOX CREATOR IS BOX MODEL OUTPUT-->
             <div id="boxOutput">
-                <div id="boxModel">
+                <div id="boxModel" style="height: 10vh; width: 10vh;">
                 </div>
             </div>
         </div>
@@ -77,24 +78,23 @@
             function myFunction() {
                 let xInput = document.getElementById("sizeForm");
                 let x = parseFloat(xInput.elements[0].value);
-                document.getElementById("test").innerHTML = x + 0.125;
                 let screenHeight = window.innerHeight;
                 let screenWidth = window.innerWidth;
-                let xPierce = x + 0.125;
                 let y = parseFloat(xInput.elements[1].value);
+                let xPierce = x + 0.125;
                 let yHalf= y / 2;
-                let boxHeight = 70;
+                let boxHeight = 75;
                 let conversionRate = y / x;
                 let boxWidth = conversionRate * boxHeight;
             
-                if (boxWidth >= 35) {
-                    document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
-                    document.getElementById("boxModel").style.width = '35vw';
-                }
-                else {
+                //if (boxWidth >= 35) {
+                   // document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
+                //    document.getElementById("boxModel").style.width = '35vw';
+             //   }
+               // else {
                     document.getElementById("boxModel").style.height = "75vh";
                     document.getElementById("boxModel").style.width = boxWidth + "vh";
-                }
+              //  }
             }
         </script>
     </body>
