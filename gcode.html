@@ -3,9 +3,13 @@
     <head>
         <title>G CODE</title>
         <style>
+            html {
+                height: 100%;
+            }
             body {
                 padding: 0;
                 margin: 0;
+                height: 100%;
             }
             h1 {
                 width: 100%;
@@ -76,45 +80,22 @@
                 document.getElementById("test").innerHTML = x + 0.125;
                 let screenHeight = window.innerHeight;
                 let screenWidth = window.innerWidth;
-            // let x = 48.75;
                 let xPierce = x + 0.125;
                 let y = parseFloat(xInput.elements[1].value);
                 let yHalf= y / 2;
-                let boxHeight = 50;
+                let boxHeight = 70;
                 let conversionRate = y / x;
                 let boxWidth = conversionRate * boxHeight;
             
-                if (boxWidth > 35) {
-                document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
-                document.getElementById("boxModel").style.width = '35vw';
+                if (boxWidth >= 35) {
+                    document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
+                    document.getElementById("boxModel").style.width = '35vw';
                 }
                 else {
-                document.getElementById("boxModel").style.height = "75vh";
-                document.getElementById("boxModel").style.width = boxWidth + "vh";
+                    document.getElementById("boxModel").style.height = "75vh";
+                    document.getElementById("boxModel").style.width = boxWidth + "vh";
                 }
             }
-                
-            /*let screenHeight = window.innerHeight;
-            let screenWidth = window.innerWidth;
-            let x = 48.75;
-            let xPierce = x + 0.125;
-            let y = 6.75;
-            let yHalf= y / 2;
-            let boxHeight = 75;
-            let conversionRate = y / x;
-            let boxWidth = conversionRate * boxHeight;
-            
-            if (boxWidth > 35) {
-                document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
-                document.getElementById("boxModel").style.width = '35vw';
-            }
-            else {
-                document.getElementById("boxModel").style.height = "75vh";
-                document.getElementById("boxModel").style.width = boxWidth + "vh";
-            }
-            
-            document.getElementById("boxModel").style.height = boxHeight + "vh";
-            document.getElementById("boxModel").style.width = boxWidth + "vh";*/
         </script>
     </body>
 </html>
