@@ -41,6 +41,15 @@
             #codeDisplay {
                 width: 35vw;
                 border: 2px solid black;
+                height: 85vh;
+                background-color: rgba(255,255,255,0.13);
+                margin: 10% auto;
+                overflow: scroll;
+            }
+            #gCode {
+                color: white;
+                margin: 5px;
+                font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
             }
             #boxOutput {
                 width: 45vw;
@@ -71,6 +80,35 @@
             <!--LEFT SIDE OF BOX CREATOR IS FOR G CODE OUTPUT-->
             <div id="gcodeOutput">
                 <div id="codeDisplay">
+                    <p id="gCode">(-------------------------------)<br>
+                        (PART FILE NAME - Part 1)<br>
+                        (PART SIZE - 4.0 x 10.0)<br>
+                        (-------------------------------)<br>
+                        (BLANK SIZE - 156.000, 48.000)<br>
+                        (-------------------------------)<br>
+                        (PROGRAMMER NAME - SMD)<br>
+                        (DATE - 09/28/2021)<br>
+                        (TIME - 22:50)<br>
+                        (-------------------------------)<br>
+                        G90G92X0Y0<br>
+                        /G121L2A1X0.0Y0.0I140.4000J15.6000Q36.000B0C0Z2.000D2.0000W0<br>
+                        M100<br>
+                        G930.3750Y0.3750<br>
+                        E8<br>
+                        G00G41X10.125Y2.0<br>
+                        M103<br>
+                        G01X10.0<br>
+                        Y0.0000<br>
+                        X0.0000<br>
+                        Y4.0<br>
+                        X10.0<br>
+                        Y2.0<br>
+                        M104<br>
+                        G00X0Y4.0<br>
+                        M101<br>
+                        M30<br>
+                        %
+                    </p>
                 </div>
             </div>
             <!--RIGHT SIDE OF BOX CREATOR IS BOX MODEL OUTPUT-->
@@ -93,8 +131,9 @@
                 let conversionRate = y / x;
                 let boxWidth = conversionRate * boxHeight;
             
-                if ((boxWidth >= 35) && ((((x / y ) * 35) * screenWidth / 100) <= 0.75 * screenHeight)) {
-                    document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
+                if ((boxWidth >= 35) && ((((x / y ) * 35) * screenWidth / 100) <= 0.75 * screenHeight)) 
+                   //doesnt work properly && (0.35 * screenWidth < 0.75 * screenHeight)) {
+                    { document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
                     document.getElementById("boxModel").style.width = '35vw';
                 }
                 else {
