@@ -46,7 +46,7 @@
                 width: 45vw;
             }
             #boxModel {
-                border: 2px solid rgba(100,0,100,0.8);
+                border: 2px solid rgba(25,100,0,0.9);
                 margin: 10% auto;
             }
             #example {
@@ -93,7 +93,7 @@
                 let conversionRate = y / x;
                 let boxWidth = conversionRate * boxHeight;
             
-                if ((boxWidth >= 35) || ((boxWidth / 10) * screenHeight > screenWidth /2)) {
+                if ((boxWidth >= 35) && ((((x / y ) * 35) * screenWidth / 100) <= 0.75 * screenHeight)) {
                     document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
                     document.getElementById("boxModel").style.width = '35vw';
                 }
