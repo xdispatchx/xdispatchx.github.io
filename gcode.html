@@ -87,11 +87,11 @@
                 let conversionRate = y / x;
                 let boxWidth = conversionRate * boxHeight;
             
-                //if (boxWidth >= 35) {
-                   // document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
-                //    document.getElementById("boxModel").style.width = '35vw';
-             //   }
-               // else {
+                if (boxWidth >= 35) {
+                    document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
+                    document.getElementById("boxModel").style.width = '35vw';
+                }
+                else {
                     document.getElementById("boxModel").style.height = "75vh";
                     document.getElementById("boxModel").style.width = boxWidth + "vh";
               //  }
