@@ -87,7 +87,7 @@
                 let conversionRate = y / x;
                 let boxWidth = conversionRate * boxHeight;
             
-                if (boxWidth >= 35) {
+                if ((boxWidth >= 35) || ((boxWidth * screenHeight) > (screenHeight / 2))) {
                     document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
                     document.getElementById("boxModel").style.width = '35vw';
                 }
