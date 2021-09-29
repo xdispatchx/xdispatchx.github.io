@@ -36,10 +36,14 @@
                 display: inline;
             }
             #gcodeOutput {
-                flex-grow: 1;
+                width: 45vw;
+            }
+            #codeDisplay {
+                width: 35vw;
+                border: 2px solid black;
             }
             #boxOutput {
-                flex-grow: 2;
+                width: 45vw;
             }
             #boxModel {
                 border: 2px solid rgba(100,0,100,0.8);
@@ -66,6 +70,8 @@
             </div>
             <!--LEFT SIDE OF BOX CREATOR IS FOR G CODE OUTPUT-->
             <div id="gcodeOutput">
+                <div id="codeDisplay">
+                </div>
             </div>
             <!--RIGHT SIDE OF BOX CREATOR IS BOX MODEL OUTPUT-->
             <div id="boxOutput">
@@ -87,7 +93,7 @@
                 let conversionRate = y / x;
                 let boxWidth = conversionRate * boxHeight;
             
-                if ((boxWidth >= 35) || ((boxWidth * screenHeight) > (screenHeight / 2))) {
+                if (boxWidth >= 35) {
                     document.getElementById("boxModel").style.height = (x / y) * 35 + "vw";
                     document.getElementById("boxModel").style.width = '35vw';
                 }
