@@ -51,6 +51,10 @@
                 margin: 5px;
                 font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
             }
+            span {
+                color: mediumpurple;
+                font-weight: bold;
+            }
             #boxOutput {
                 width: 45vw;
             }
@@ -72,7 +76,7 @@
         <div id="boxCreator">
             <div id="sizeInput">
                 <form id="sizeForm" action="#">
-                    Height: <input type="text" name="xinput" value="4.86">
+                    Height: <input type="text" name="xinput" value="1.5">
                     Width: <input type="text" name="yinput" value="1.5">                       
                 </form>
                 <button id="inputButton" onclick="myFunction()">Submit</button>
@@ -81,12 +85,12 @@
             <div id="gcodeOutput">
                 <div id="codeDisplay">
                     <p id="gCode">(-------------------------------)<br>
-                        (PART FILE NAME - Part 1)<br>
-                        (PART SIZE - 4.0 x 10.0)<br>
+                        (PART FILE NAME - <span id="partName"></span>)<br>
+                        (PART SIZE - <span class="y"></span> x <span class="x"></span>)<br>
                         (-------------------------------)<br>
                         (BLANK SIZE - 156.000, 48.000)<br>
                         (-------------------------------)<br>
-                        (PROGRAMMER NAME - SMD)<br>
+                        (PROGRAMMER NAME - BOX GENERATOR)<br>
                         (DATE - 09/28/2021)<br>
                         (TIME - 22:50)<br>
                         (-------------------------------)<br>
@@ -95,7 +99,7 @@
                         M100<br>
                         G930.3750Y0.3750<br>
                         E8<br>
-                        G00G41X10.125Y2.0<br>
+                        G00G41X<span id="pierceLength"></span>Y<span class="yHalfWidth"></span><br>
                         M103<br>
                         G01X10.0<br>
                         Y0.0000<br>
@@ -113,23 +117,24 @@
             </div>
             <!--RIGHT SIDE OF BOX CREATOR IS BOX MODEL OUTPUT-->
             <div id="boxOutput">
-                <div id="boxModel" style="height: 10vh; width: 10vh;">
+                <div id="boxModel" style="height: 35vh; width: 35vh;">
                 </div>
             </div>
         </div>
 
         <script>
-            function myFunction() {
+            function myFunction() { 
                 let xInput = document.getElementById("sizeForm");
                 let x = parseFloat(xInput.elements[0].value);
                 let screenHeight = window.innerHeight;
                 let screenWidth = window.innerWidth;
                 let y = parseFloat(xInput.elements[1].value);
                 let xPierce = x + 0.125;
-                let yHalf= y / 2;
-                let boxHeight = 75;
+                let yHalf = y / 2;
+                let boxHeight = 50;
                 let conversionRate = y / x;
                 let boxWidth = conversionRate * boxHeight;
+                let partName = y + "-x-" + x;
             
                 if ((boxWidth >= 35) && ((((x / y ) * 35) * screenWidth / 100) <= 0.75 * screenHeight)) 
                    //doesnt work properly && (0.35 * screenWidth < 0.75 * screenHeight)) {
@@ -137,9 +142,15 @@
                     document.getElementById("boxModel").style.width = '35vw';
                 }
                 else {
-                    document.getElementById("boxModel").style.height = "75vh";
+                    document.getElementById("boxModel").style.height = "50vh";
                     document.getElementById("boxModel").style.width = boxWidth + "vh";
                 }
+                
+                document.getElementById("partName").innerHTML = partName;
+                document.getElementById("pierceLength").innerHTML = xPierce;
+                document.getElementsByClassName('x')[0].innerHTML = x;
+                document.getElementsByClassName('y')[0].innerHTML = y;
+                document.getElementsByClassName('yHalfWidth')[0].innerHTML = yHalf;
             }
         </script>
     </body>
