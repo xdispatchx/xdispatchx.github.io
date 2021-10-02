@@ -22,18 +22,44 @@
                 grid-template-columns: auto auto;
                 height: 100%;
                 padding: 1em 1em 0 1em;
-            }           
+            }       
+            #sizeForm {
+                font-size: 32px;
+            }
             #sizeInput {
                 padding: 5px;
                 grid-column: 1 / span 2;
-                margin: 0 auto;
                 color: white;
                 font-family: sans-serif;
                 text-transform: uppercase;
                 font-weight: bold;
+                text-align: center;
             }
             #sizeForm {
                 display: inline;
+            }
+            input {
+                background-color: rgba(255,255,255,0.1);
+                border: none;
+                font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
+                color: rgba(255, 255, 255, 0.4);
+                padding: 0.25em;
+                border-radius: 5px;
+            }
+            #inputButton {
+                font-size: 32px;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: green;
+                border-radius: 5px;
+                border: 1px solid rgba(255,255,255,0.1);
+                background-color: black;
+                padding: 0.25em;
+            }
+            #inputButton:hover {
+                background-color: rgba(255,255,255,0.1);
+                border: 1px solid black;
+                color: lightgreen;
             }
             #gcodeOutput {
                 width: 45vw;
@@ -72,16 +98,16 @@
     
     <body>
         <header>
-            <h1>G Code Creator - Box Models</h1>
+            <h1>G Code Generator - Box Models</h1>
         </header>
         <!--BOX CREATOR PARENT DIV-->
         <div id="boxCreator">
             <div id="sizeInput">
                 <form id="sizeForm" action="#">
-                    Height: <input type="text" name="xinput" value="1.5" style="font-size: 16px;">
-                    Width: <input type="text" name="yinput" value="1.5" style="font-size: 16px;">                       
+                    Height: <input type="text" name="xinput" value="1.5" style="font-size: 32px; width: 15%">
+                    Width: <input type="text" name="yinput" value="1.5" style="font-size: 32px; width: 15%">                       
                 </form>
-                <button id="inputButton" onclick="myFunction()">Submit</button>
+                <button id="inputButton" onclick="myFunction()">Generate</button>
             </div>
             <!--LEFT SIDE OF BOX CREATOR IS FOR G CODE OUTPUT-->
             <div id="gcodeOutput">
