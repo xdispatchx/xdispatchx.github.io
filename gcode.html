@@ -43,8 +43,10 @@
                 border: 2px solid black;
                 height: 85vh;
                 background-color: rgba(255,255,255,0.13);
-                margin: 10% auto;
+                margin: 0 auto;
                 overflow: scroll;
+                position: relative;
+                top: 0;
             }
             #gCode {
                 color: white;
@@ -101,14 +103,14 @@
                         E8<br>
                         G00G41X<span id="pierceLength"></span>Y<span class="yHalfWidth"></span><br>
                         M103<br>
-                        G01X10.0<br>
+                        G01X<span class="x"></span><br>
                         Y0.0000<br>
                         X0.0000<br>
-                        Y4.0<br>
-                        X10.0<br>
-                        Y2.0<br>
+                        Y<span class="y"></span><br>
+                        X<span class="x"></span><br>
+                        Y<span class="yHalfWidth"></span><br>
                         M104<br>
-                        G00X0Y4.0<br>
+                        G00X0Y<span class="y"></span><br>
                         M101<br>
                         M30<br>
                         %
@@ -117,7 +119,7 @@
             </div>
             <!--RIGHT SIDE OF BOX CREATOR IS BOX MODEL OUTPUT-->
             <div id="boxOutput">
-                <div id="boxModel" style="height: 35vw; width: 35vw;">
+                <div id="boxModel" style="height: 0vw; width: 0vw;">
                 </div>
             </div>
         </div>
@@ -135,6 +137,7 @@
                 let conversionRate = y / x;
                 let boxWidth = conversionRate * boxHeight;
                 let partName = y + "-x-" + x;
+                let i = 0;
             
                 if ((boxWidth >= 35) && ((((x / y ) * 35) * screenWidth / 100) <= 0.75 * screenHeight)) 
                    //doesnt work properly && (0.35 * screenWidth < 0.75 * screenHeight)) {
@@ -148,9 +151,21 @@
                 
                 document.getElementById("partName").innerHTML = partName;
                 document.getElementById("pierceLength").innerHTML = xPierce;
-                document.getElementsByClassName('x')[0].innerHTML = x;
-                document.getElementsByClassName('y')[0].innerHTML = y;
-                document.getElementsByClassName('yHalfWidth')[0].innerHTML = yHalf;
+                let xReplace = document.getElementsByClassName("x");
+                for (i = 0; i < xReplace.length ; i++) {
+                    xReplace[i].innerHTML = x;
+                }
+                
+                let yReplace = document.getElementsByClassName("y");
+                for (i = 0; i < yReplace.length ; i++) {
+                    yReplace[i].innerHTML = y;
+                }
+                
+                let halfY = document.getElementsByClassName('yHalfWidth');
+                for (i = 0; i < halfY.length ; i++) {
+                    halfY[i].innerHTML = yHalf;
+                }
+
             }
         </script>
     </body>
