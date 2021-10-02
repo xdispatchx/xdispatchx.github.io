@@ -119,7 +119,7 @@
                         (BLANK SIZE - 156.000, 48.000)<br>
                         (-------------------------------)<br>
                         (PROGRAMMER NAME - BOX GENERATOR)<br>
-                        (DATE - 09/28/2021)<br>
+                        (DATE - <span id="date"></span>)<br>
                         (TIME - 22:50)<br>
                         (-------------------------------)<br>
                         G90G92X0Y0<br>
@@ -164,6 +164,11 @@
                 let boxWidth = conversionRate * boxHeight;
                 let partName = y + "-x-" + x;
                 let i = 0;
+                
+                //Get DATE
+                const date = new Date();
+                let newDate = ((date.getMonth() + 1) + "/" + ("0" + date.getDate()).slice(-2) + "/" + date.getFullYear())
+                document.getElementById("date").innerHTML = newDate;
             
                 if ((boxWidth >= 35) && ((((x / y ) * 35) * screenWidth / 100) <= 0.75 * screenHeight)) 
                    //doesnt work properly && (0.35 * screenWidth < 0.75 * screenHeight)) {
