@@ -120,7 +120,7 @@
                         (-------------------------------)<br>
                         (PROGRAMMER NAME - BOX GENERATOR)<br>
                         (DATE - <span id="date"></span>)<br>
-                        (TIME - 22:50)<br>
+                        (TIME - <span id="time"></span>)<br>
                         (-------------------------------)<br>
                         G90G92X0Y0<br>
                         /G121L2A1X0.0Y0.0I140.4000J15.6000Q36.000B0C0Z2.000D2.0000W0<br>
@@ -169,6 +169,8 @@
                 const date = new Date();
                 let newDate = ((date.getMonth() + 1) + "/" + ("0" + date.getDate()).slice(-2) + "/" + date.getFullYear())
                 document.getElementById("date").innerHTML = newDate;
+                let time = (date.getHours() + ":" + date.getMinutes());
+                document.getElementById("time").innerHTML = time;
             
                 if ((boxWidth >= 35) && ((((x / y ) * 35) * screenWidth / 100) <= 0.75 * screenHeight)) 
                    //doesnt work properly && (0.35 * screenWidth < 0.75 * screenHeight)) {
