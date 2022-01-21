@@ -1,0 +1,121 @@
+body {
+                padding: 0;
+                margin: 0 1em 0 1em;
+                height: 100%;
+                background-color: black;
+            }
+            h1 {
+                max-height: 25vw;
+                width: 100%;
+                text-align: center;
+                font-family: sans-serif;
+                text-transform: uppercase;
+                color: white;
+            }
+            #boxCreator {
+                display: grid;
+                grid-template-columns: auto auto;
+                height: 100%;
+                padding: 1em 1em 0 1em;
+            }       
+            #sizeForm {
+                font-size: 32px;
+            }
+            #sizeInput {
+                padding: 5px;
+                grid-column: 1 / span 2;
+                color: white;
+                font-family: sans-serif;
+                text-transform: uppercase;
+                font-weight: bold;
+                text-align: center;
+            }
+            #sizeForm {
+                display: inline;
+            }
+            input {
+                background-color: rgba(255,255,255,0.1);
+                border: none;
+                font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
+                color: rgba(255, 255, 255, 0.4);
+                padding: 0.25em;
+                border-radius: 5px;
+            }
+            #inputButton {
+                font-size: 32px;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: green;
+                border-radius: 5px;
+                border: 1px solid rgba(255,255,255,0.1);
+                background-color: black;
+                padding: 0.25em;
+            }
+            #inputButton:hover {
+                background-color: rgba(255,255,255,0.1);
+                border: 1px solid black;
+                color: lightgreen;
+            }
+            #more_options {
+            grid-column: 1 / span 2;
+                color: white;
+                background-color: rgba(155,155,155,0.5);
+                border: 1px solid rgba(155,155,155,0.5);
+                width: 50%;
+                text-align: center;
+                margin: 0 auto;
+                padding: 1em;
+                border-radius: 1em;
+            }
+            #more_options:hover {
+            background-color: black;
+            border: 1px solid white;
+            }
+            #edit_options {
+                grid-column: 1 / span 2;
+                color: white;
+                background-color: rgba(155,155,155,0.5);
+                border: 1px solid rgba(155,155,155,0.5);
+                width: 70%;
+                text-align: center;
+                margin: 0 auto;
+                padding: 1em;
+                border-radius: 1em;
+            }
+            #optionsForm input {
+                color: white;
+                background-color: black;
+            }
+            #gcodeOutput {
+                width: 45vw;
+            }
+            #codeDisplay {
+                width: 35vw;
+                border: 2px solid black;
+                height: 85vh;
+                background-color: rgba(255,255,255,0.13);
+                margin: 0 auto;
+                overflow: scroll;
+                position: relative;
+                top: 0;
+            }
+            #gCode {
+                color: white;
+                margin: 5px;
+                font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
+            }
+            span {
+                color: mediumpurple;
+                font-weight: bold;
+            }
+            #boxOutput {
+                width: 45vw;
+            }
+            #boxModel {
+                border: 2px solid black;
+                margin: 10% auto;
+                background-image: url(ss.jpg);
+            }
+            #example {
+                font-size: 3vh;
+            }
