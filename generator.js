@@ -17,7 +17,7 @@ function myFunction() {
         partName = "part-" + partNumber,
         i = 0;
                 
-    document.getElementById("boxModel").style.borderColor = "rgba(255,0,255,0.8)";
+    document.getElementById("boxModel").style.borderColor = "black";
 
     //Get DATE
     const date = new Date();
