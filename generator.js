@@ -21,10 +21,12 @@ function myFunction() {
 
     //Get DATE
     const date = new Date();
-    let newDate = ((date.getMonth() + 1) + "/" + ("0" + date.getDate()).slice(-2) + "/" + date.getFullYear())
+    var year = date.getFullYear();
+    let newDate = ((date.getMonth() + 1) + "/" + ("0" + date.getDate()).slice(-2) + "/" + year)
     document.getElementById("date").innerHTML = newDate;
     let time = (date.getHours() + ":" +("0" + date.getMinutes()).slice(-2));
     document.getElementById("time").innerHTML = time;
+    document.getElementById("createYear").innerHTML = year;
             
     if ((boxWidth >= 35) && ((((x / y ) * 35) * screenWidth / 100) <= 0.75 * screenHeight)) 
        //doesnt work properly && (0.35 * screenWidth < 0.75 * screenHeight)) {
@@ -59,6 +61,7 @@ function myFunction() {
     
     document.getElementById("job_identifier").innerHTML = jobNumber;
     document.getElementById("part_number").innerHTML = "part-" + partNumber;
+    document.getElementById("humanReadableName").innerHTML = "Part " + partNumber;
 
 }
 
