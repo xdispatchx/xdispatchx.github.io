@@ -41,24 +41,19 @@
                     Job ID: <input type="text" name="jobId" value="wo#" style="font-size: 16px; width: 15%">        
                     Part Number: <input type="text" name="partNumber" value="1" style="font-size: 16px; width: 15%">
                 </form>
+                <button id="copyClipboard" onclick="copyDivToClipboard()">Copy to Clipboard</button>
             </div>
             <!--LEFT SIDE OF BOX CREATOR IS FOR G CODE OUTPUT-->
             <div id="gcodeOutput">
                 <div id="codeDisplay">
-                    <p id="gCode">
-                        (PR/<span id="humanReadableName"></span>)<br>
-                        (MC/    )<br>
+                    <p id="gCode">(PR/<span id="humanReadableName"></span>)<br>
                         (MA/<span id="material_type"></span>)<br>
-                        (WK/ 0.060T 156.000X 60.000)<br>
-                        (CL/    )<br>
-                        (CR/Y<span id="createYear"></span>M05D26)<br>
+                        (CR/Y<span id="createYear"></span>M<span id="createMonth"></span>D<span id="createDay"></span>)<br>
                         (CM/<span id="material"></span>)<br>
                         (NC FILE NAME - L:\NC FILES\QUICK PROGRAMS\SHEAR\<span id="job_identifier"></span>\<span id="part_number"></span>.nc)<br>
                         (-------------------------------)<br>
                         (PART FILE NAME - <span id="partName"></span>)<br>
-                        (PART SIZE - <span class="y"></span> x <span class="x"></span>)<br>
-                        (-------------------------------)<br>
-                        (BLANK SIZE - 156.000, 48.000)<br>
+                        (PART SIZE - <span class="x"></span> x <span class="y"></span>)<br>
                         (-------------------------------)<br>
                         (PROGRAMMER NAME - BOX GENERATOR)<br>
                         (DATE - <span id="date"></span>)<br>

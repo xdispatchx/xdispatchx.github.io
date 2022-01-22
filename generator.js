@@ -14,7 +14,7 @@ function myFunction() {
         boxHeight = 50,
         conversionRate = y / x,
         boxWidth = conversionRate * boxHeight,
-        partName = y + "-x-" + x,
+        partName = "part-" + partNumber,
         i = 0;
                 
     document.getElementById("boxModel").style.borderColor = "rgba(255,0,255,0.8)";
@@ -22,11 +22,15 @@ function myFunction() {
     //Get DATE
     const date = new Date();
     var year = date.getFullYear();
-    let newDate = ((date.getMonth() + 1) + "/" + ("0" + date.getDate()).slice(-2) + "/" + year)
+    var month = ("0" + date.getMonth() + 1).slice(-2);
+    var day = ("0" + date.getDate()).slice(-2);
+    let newDate = ((date.getMonth() + 1) + "/" + day + "/" + year)
     document.getElementById("date").innerHTML = newDate;
     let time = (date.getHours() + ":" +("0" + date.getMinutes()).slice(-2));
     document.getElementById("time").innerHTML = time;
     document.getElementById("createYear").innerHTML = year;
+    document.getElementById("createMonth").innerHTML = month;
+    document.getElementById("createDay").innerHTML = day;
             
     if ((boxWidth >= 35) && ((((x / y ) * 35) * screenWidth / 100) <= 0.75 * screenHeight)) 
        //doesnt work properly && (0.35 * screenWidth < 0.75 * screenHeight)) {
@@ -64,6 +68,19 @@ function myFunction() {
     document.getElementById("humanReadableName").innerHTML = "Part " + partNumber;
 
 }
+
+function copyDivToClipboard() {
+    var range = document.createRange();
+    range.selectNode(document.getElementById("gCode"));
+    window.getSelection().removeAllRanges(); // clear current selection
+    window.getSelection().addRange(range); // to select text
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();// to deselect
+}
+
+document.addEventListener ('keydown', function(e){
+    if (e.which === 13) myFunction();
+})
 
 //Hide/Show Advanced Options
 /*
