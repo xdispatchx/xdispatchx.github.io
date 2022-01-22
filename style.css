@@ -86,6 +86,27 @@ body {
                 color: white;
                 background-color: black;
             }
+            #copyClipboard{
+                height: 2em;
+                width: 25%;
+                border-radius: 0.25em;
+                margin-top: 1em;
+                transition: width 1s;
+                border: none;
+            }
+            #copyClipboard span {
+                color: black;
+            }
+            #copyClipboard:hover{
+                width: 35%;
+                background-color: black;
+            }
+            #copyClipboard:hover span {
+                color: white;
+            }
+            #copyClipboard:active {
+                background-color: green;
+            }
             #gcodeOutput {
                 width: 45vw;
             }
