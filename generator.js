@@ -1,6 +1,7 @@
 /* global document, window */
 function myFunction() {
     "use strict";
+    
     var xInput = document.getElementById("sizeForm"),
         x = parseFloat(xInput.elements[0].value),
         screenHeight = window.innerHeight,
@@ -66,6 +67,30 @@ function myFunction() {
     document.getElementById("job_identifier").innerHTML = jobNumber;
     document.getElementById("part_number").innerHTML = "part-" + partNumber;
     document.getElementById("humanReadableName").innerHTML = "Part " + partNumber;
+    
+    
+    //Change background image/color based on material choice.
+    //Also changes material code (useful for machine operator to reference)
+    if (materialText == "22G Paintlock" || materialText == "Textured" || materialText == "22G Galvanized") {
+        document.getElementById("materialCode").innerHTML = "C-SECC0.8-L2-";
+        document.getElementById("boxModel").style.backgroundImage = "none";
+    }
+    else if (materialText == "16G Paintlock") {
+        document.getElementById("materialCode").innerHTML = "C-SECC1.6-L2-";
+        document.getElementById("boxModel").style.backgroundImage = "none";
+    }
+    else if (materialText == "14G Paintlock") {
+        document.getElementById("materialCode").innerHTML = "C-SECC2.0-L-2-"
+        document.getElementById("boxModel").style.backgroundImage = "none";
+    }
+    else if (materialText == "16G Galvanized") {
+        document.getElementById("materialCode").innerHTML = "C-SPG1.6-L-2-";
+        document.getElementById("boxModel").style.backgroundImage = "none";
+    }
+    else {
+        document.getElementById("materialCode").innerHTML = "";
+        document.getElementById("boxModel").style.backgroundImage = "url(ss.jpg)";
+    }
 
 }
 
@@ -81,17 +106,3 @@ function copyDivToClipboard() {
 document.addEventListener ('keydown', function(e){
     if (e.which === 13) myFunction();
 })
-
-//Hide/Show Advanced Options
-/*
-function hideOptions() {
-    var hide = document.getElementById("edit_options");
-    if (hide.style.display === "none") {
-        hide.style.display = "block";
-        document.getElementById("editOptionsText").innerHTML = "Hide Options";
-    } else {
-        document.getElementById("editOptionsText").innerHTML = "Show Options";
-        hide.style.display = "none";
-    }
-}
-*/
